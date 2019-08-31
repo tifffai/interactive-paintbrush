@@ -10,14 +10,26 @@
   <canvas id="draw" width="800" height="800"></canvas>
 
   <script>
+    //defining canvas specifications
     const canvas = document.querySelector('#draw');
     const ctx = canvas.getContext('2d');
+
+    //sets canvas size to follow browser size
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
+    // sets interactive brush stroke color and shape
     ctx.strokeStyle = '#BADA55';
     ctx.lineJoin = 'round';
     ctx.lineCap = 'round';
+
+    // set boolean variables (so that when cursor is not clicked down it will not select and continue to draw)
+    let isDrawing = false;
+
+    // set variables to declare where the line (a line needs starting and end X & Y, the last X & Y is where it ends)
+    let lastX = 0;
+    let lastY = 0;
+    
 
   </script>
 
